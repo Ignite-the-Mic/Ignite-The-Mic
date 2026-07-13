@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ignite the Mic,  A St. Jude Fundraiser</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    body {
+      font-family: Georgia, serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #111;
+      background: #fff;
+    }
+ 
+    a { color: inherit; text-decoration: none; }
+ 
+    
+    nav {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      z-index: 100;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+ 
+    .nav-logo {
+      font-size: 1.1rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+ 
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+ 
+    .nav-links a {
+      font-size: 0.9rem;
+      color: #333;
+      transition: color 0.2s;
+    }
+ 
+    .nav-links a:hover { color: #000; text-decoration: underline; }
+ 
+    
+    section {
+      padding: 80px 2rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+ 
+    section + section {
+      border-top: 1px solid #eee;
+    }
+ 
+    h1, h2, h3 {
+      font-family: Georgia, serif;
+      font-weight: bold;
+      line-height: 1.3;
+    }
+ 
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+    }
+ 
+    p {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+ 
+    
+    #hero {
+      text-align: center;
+      padding: 100px 2rem;
+      border-bottom: 1px solid #eee;
+    }
+ 
+    #hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+ 
+    #hero .tagline {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+ 
+    #hero .goal-badge {
+      display: inline-block;
+      border: 1px solid #111;
+      padding: 0.4rem 1.2rem;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+ 
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      background: #111;
+      color: #fff;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+ 
+    .btn:hover { background: #333; }
+ 
+    .btn-outline {
+      background: transparent;
+      color: #111;
+      border: 1px solid #111;
+    }
+ 
+    .btn-outline:hover { background: #111; color: #fff; }
+ 
+    
+    #about p { max-width: 680px; }
+ 
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+ 
+    .about-card {
+      border: 1px solid #ddd;
+      padding: 1.5rem;
+    }
+ 
+    .about-card h3 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+ 
+    .about-card p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+ 
+    
+    #performers .performers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+ 
+    .performer-card {
+      border: 1px solid #ddd;
+      padding: 1.5rem;
+      text-align: center;
+    }
+ 
+    .performer-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #eee;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #999;
+    }
+ 
+    .performer-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+ 
+    .performer-card p {
+      font-size: 0.85rem;
+      color: #666;
+      margin: 0;
+    }
+ 
+    
+    #donate {
+      text-align: center;
+    }
+ 
+    #donate p {
+      max-width: 560px;
+      margin: 0 auto 1.5rem;
+    }
+ 
+    .progress-wrap {
+      max-width: 500px;
+      margin: 2rem auto;
+    }
+ 
+    .progress-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: #555;
+      margin-bottom: 0.4rem;
+    }
+ 
+    .progress-bar {
+      height: 10px;
+      background: #eee;
+      width: 100%;
+    }
+ 
+    .progress-fill {
+      height: 100%;
+      background: #111;
+      width: 0%; 
+    }
+ 
+    .donate-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+ 
+    
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 520px;
+      margin-top: 1.5rem;
+    }
+ 
+    #contact input,
+    #contact textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #ccc;
+      font-family: Georgia, serif;
+      font-size: 0.95rem;
+      background: #fff;
+      color: #111;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+ 
+    #contact input:focus,
+    #contact textarea:focus { border-color: #111; }
+ 
+    #contact textarea { min-height: 120px; resize: vertical; }
+ 
+    
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #888;
+      border-top: 1px solid #eee;
+    }
+ 
+    
+    #team .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+ 
+    .team-card {
+      border: 1px solid #ddd;
+      padding: 1.5rem;
+      text-align: center;
+    }
+ 
+    .team-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 1rem;
+      background: #eee;
+    }
+ 
+    .team-photo-placeholder {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #eee;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: #aaa;
+      border: 1px dashed #ccc;
+    }
+ 
+    .team-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+ 
+    .team-card .team-role {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #888;
+      margin-bottom: 0.75rem;
+    }
+ 
+    .team-card .team-bio {
+      font-size: 0.85rem;
+      color: #555;
+      margin: 0;
+    }
+ 
+    
+    @media (max-width: 640px) {
+      #hero h1 { font-size: 2rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .performers-grid { grid-template-columns: 1fr 1fr !important; }
+      .team-grid { grid-template-columns: 1fr 1fr !important; }
+      .nav-links { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+ 
+  
+  <nav>
+    <div class="nav-logo">Ignite the Mic</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#performers">Performers</a></li>
+      <li><a href="#team">Our Team</a></li>
+      <li><a href="#donate">Donate</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+ 
+  
+  <section id="hero">
+    <h1>Ignite the Mic</h1>
+    <p class="tagline">A live music fundraiser in partnership with St. Jude Children's Hospital</p>
+    <div class="goal-badge">Goal: $25,000</div>
+    <br>
+    <a href="#donate" class="btn">Donate!!!!!!</a>
+  </section>
+ 
+  
+  <section id="about">
+    <h2>About the Event</h2>
+    <p>
+      Ignite the Mic is a fundraiser dedicated to helping families afford treatment at St. Jude Children's Hospital. Every dollar raised goes directly toward ensuring no family has to worry about the cost of care while their child fights for their life.
+    </p>
+    <p>
+      Join us for a morning/afternoon/night of live  music and giving back to those who need it.
+    </p>
+ 
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>Date & Time</h3>
+        <p>TBD Date, 2026 at Time</p>
+      </div>
+      <div class="about-card">
+        <h3>Location</h3>
+        <p>Hopefully Liberty High School<br>16655 Se 136th St, Renton, WA</p>
+      </div>
+      <div class="about-card">
+        <h3>Our Mission</h3>
+        <p>Help families afford treatment at St. Jude Children's Research Hospital.</p>
+      </div>
+      <div class="about-card">
+        <h3>Fundraising Goal</h3>
+        <p>$25,000, every contribution counts, no matter the size.</p>
+      </div>
+    </div>
+  </section>
+ 
+  
+  <section id="performers">
+    <h2>Performers</h2>
+    <p>Local artists coming together to perform for a cause. Performers are to be added <p>
+ 
+    <div class="performers-grid">
+      <div class="performer-card">
+        <div class="performer-avatar">♪</div>
+        <h3>Performer Name</h3>
+        <p>Description</p>
+      </div>
+      <div class="performer-card">
+        <div class="performer-avatar">♪</div>
+        <h3>Performer Name</h3>
+        <p>Description</p>
+      </div>
+      <div class="performer-card">
+        <div class="performer-avatar">♪</div>
+        <h3>Performer Name</h3>
+        <p>Description</p>
+      </div>
+    </div>
+  </section>
+ 
+  
+  <section id="team">
+    <h2>Our Team</h2>
+    <p>Meet the people behind Ignite the Mic, making the magic happen.</p>
+ 
+    <div class="team-grid">
+ 
+      <div class="team-card">
+        
+        <div class="team-photo-placeholder">Photo</div>
+        <h3>Dhruv Koikara</h3>
+        <p class="team-role">Web Development Leader</p>
+        <p class="team-bio">Hi I am Dhruv, I joined this initiative to help those with cancer.</p>
+      </div>
+ 
+      <div class="team-card">
+        <div class="team-photo-placeholder">Photo</div>
+        <h3>Mahima Menon</h3>
+        <p class="team-role">Founder</p>
+        <p class="team-bio">placeholder bio for now</p>
+      </div>
+ 
+      <div class="team-card">
+        <div class="team-photo-placeholder">Photo</div>
+        <h3>Name</h3>
+        <p class="team-role">Role / Title</p>
+        <p class="team-bio">placeholder bio for now</p>
+      </div>
+ 
+      <div class="team-card">
+        <div class="team-photo-placeholder">Photo</div>
+        <h3>Name</h3>
+        <p class="team-role">Role / Title</p>
+        <p class="team-bio">placeholder bio for now</p>
+      </div>
+ 
+      <div class="team-card">
+        <div class="team-photo-placeholder">Photo</div>
+        <h3>Name</h3>
+        <p class="team-role">Role / Title</p>
+        <p class="team-bio">placeholder bio for now</p>
+      </div>
+ 
+      <div class="team-card">
+        <div class="team-photo-placeholder">Photo</div>
+        <h3>Name</h3>
+        <p class="team-role">Role / Title</p>
+        <p class="team-bio">placeholder bio for now</p>
+      </div>
+ 
+    </div>
+  </section>
+ 
+  
+  <section id="donate">
+    <h2>Support the Cause</h2>
+    <p>
+      Your donation directly supports families at St. Jude Children's Research Hospital. Help us reach our $25,000 goal and make a real difference in the lives of children fighting illness.
+    </p>
+ 
+    <div class="progress-wrap">
+      <div class="progress-labels">
+        <span id="raised-label">$0 raised</span>
+        <span>Goal: $25,000</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+    </div>
+ 
+    <div class="donate-buttons">
+      <a href="#" class="btn">$25</a>
+      <a href="#" class="btn">$50</a>
+      <a href="#" class="btn">$100</a>
+      <a href="#" class="btn btn-outline">Custom Amount</a>
+    </div>
+  </section>
+ 
+  
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Do you have questions about the event? Are you interested in performing? Reach out below.</p>
+ 
+    <form onsubmit="handleSubmit(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <textarea placeholder="Your message"></textarea>
+      <div>
+        <button type="submit" class="btn">Send</button>
+      </div>
+    </form>
+  </section>
+ 
+  
+  <footer>
+    <p>&copy; 2026 Ignite the Mic. In partnership with St. Jude Children's Research Hospital. All rights reserved.</p>
+  </footer>
+ 
+  <script>
+    
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', e => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+ 
+    
+    const raisedAmount = 0;
+    const goal = 25000;
+    const pct = Math.min((raisedAmount / goal) * 100, 100);
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('raised-label').textContent =
+      '$' + raisedAmount.toLocaleString() + ' raised';
+ 
+    
+    function handleSubmit(e) {
+      e.preventDefault();
+      alert('Thanks for reaching out! We\'ll get back to you soon.');
+      e.target.reset();
+    }
+  </script>
+ 
+</body>
+</html>
