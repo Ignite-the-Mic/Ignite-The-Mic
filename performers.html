@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Performers — Ignite the Mic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .performers-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      margin-top: 2.5rem;
+    }
+
+    .performer-card {
+      background: var(--dark3);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 2.25rem 1.5rem;
+      text-align: center;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .performer-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+
+    .performer-card:nth-child(3n+1)::before { background: var(--red); }
+    .performer-card:nth-child(3n+2)::before { background: var(--orange); }
+    .performer-card:nth-child(3n+3)::before { background: var(--yellow); }
+
+    .performer-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255,255,255,0.15);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+    }
+
+    .performer-avatar {
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      margin: 0 auto 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      position: relative;
+    }
+
+    .performer-card:nth-child(3n+1) .performer-avatar { background: rgba(141,0,52,0.15); border: 2px solid rgba(141,0,52,0.4); color: var(--red); }
+    .performer-card:nth-child(3n+2) .performer-avatar { background: rgba(224,123,63,0.15); border: 2px solid rgba(224,123,63,0.4); color: var(--orange); }
+    .performer-card:nth-child(3n+3) .performer-avatar { background: rgba(247,196,64,0.15); border: 2px solid rgba(247,196,64,0.4); color: var(--yellow); }
+
+    .performer-card h3 { font-size: 1.05rem; color: #fff; margin-bottom: 0.3rem; }
+    .performer-card .genre {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .performer-card:nth-child(3n+1) .genre { color: var(--red); }
+    .performer-card:nth-child(3n+2) .genre { color: var(--orange); }
+    .performer-card:nth-child(3n+3) .genre { color: var(--yellow); }
+
+    .performer-card p { font-size: 0.875rem; color: var(--text-muted); margin: 0; }
+
+    .coming-soon-banner {
+      background: linear-gradient(135deg, rgba(121,171,217,0.1), rgba(141,0,52,0.1));
+      border: 1px solid rgba(121,171,217,0.2);
+      border-radius: 10px;
+      padding: 1.25rem 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+    }
+
+    .coming-soon-banner .icon { font-size: 1.5rem; flex-shrink: 0; }
+    .coming-soon-banner p { color: var(--blue); font-size: 0.9rem; margin: 0; }
+    .coming-soon-banner strong { color: #fff; }
+
+    @media (max-width: 768px) {
+      .performers-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .performers-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo-box">🎤</div>
+      <span class="nav-name">Ignite the Mic</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="performers.html" class="active">Performers</a></li>
+      <li><a href="team.html">Our Team</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="donate.html" class="nav-donate-btn">Donate ♥</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="page-hero">
+      <div class="section-label" style="color:var(--orange)">Live Acts</div>
+      <h1>Performers</h1>
+      <p>Local artists coming together to use their talent for a cause bigger than themselves.</p>
+    </div>
+
+    <div class="section">
+      <div class="coming-soon-banner">
+        <div class="icon">🎵</div>
+        <p><strong>Lineup coming soon.</strong> We're finalizing our performers. Check back closer to the event or <a href="contact.html" style="color:var(--blue);text-decoration:underline">contact us</a> if you're interested in performing.</p>
+      </div>
+
+      <div class="performers-grid">
+        <div class="performer-card">
+          <div class="performer-avatar">♪</div>
+          <h3>Performer Name</h3>
+          <p class="genre">Genre</p>
+          <p>Description coming soon.</p>
+        </div>
+        <div class="performer-card">
+          <div class="performer-avatar">♪</div>
+          <h3>Performer Name</h3>
+          <p class="genre">Genre</p>
+          <p>Description coming soon.</p>
+        </div>
+        <div class="performer-card">
+          <div class="performer-avatar">♪</div>
+          <h3>Performer Name</h3>
+          <p class="genre">Genre</p>
+          <p>Description coming soon.</p>
+        </div>
+        <div class="performer-card">
+          <div class="performer-avatar">♪</div>
+          <h3>Performer Name</h3>
+          <p class="genre">Genre</p>
+          <p>Description coming soon.</p>
+        </div>
+        <div class="performer-card">
+          <div class="performer-avatar">♪</div>
+          <h3>Performer Name</h3>
+          <p class="genre">Genre</p>
+          <p>Description coming soon.</p>
+        </div>
+        <div class="performer-card">
+          <div class="performer-avatar">♪</div>
+          <h3>Performer Name</h3>
+          <p class="genre">Genre</p>
+          <p>Description coming soon.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Ignite the Mic. In partnership with St. Jude Children's Research Hospital. All rights reserved.</p>
+  </footer>
+</body>
+</html>

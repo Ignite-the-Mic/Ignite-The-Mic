@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team — Ignite the Mic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .team-section-label {
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .team-section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .leads-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+      margin-bottom: 3rem;
+      max-width: 680px;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    .team-card {
+      background: var(--dark3);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.25s;
+      cursor: default;
+    }
+
+    .team-card:hover {
+      border-color: rgba(141,0,52,0.4);
+      transform: translateY(-3px);
+    }
+
+    .team-card:hover .team-hover-overlay {
+      opacity: 1;
+    }
+
+    .team-hover-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(141,0,52,0.92);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+      opacity: 0;
+      transition: opacity 0.25s;
+      border-radius: 12px;
+    }
+
+    .team-hover-overlay h3 { color: #fff; font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .team-hover-overlay .role { color: rgba(255,255,255,0.7); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem; font-family: 'Poppins', sans-serif; font-weight: 600; }
+    .team-hover-overlay p { color: rgba(255,255,255,0.85); font-size: 0.82rem; line-height: 1.6; }
+
+    .team-photo-placeholder {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: var(--dark4);
+      border: 2px dashed rgba(141,0,52,0.35);
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: rgba(141,0,52,0.35);
+    }
+
+    .lead-card .team-photo-placeholder {
+      width: 100px;
+      height: 100px;
+      font-size: 2rem;
+    }
+
+    .team-card h3 { font-size: 0.95rem; color: #fff; margin-bottom: 0.2rem; }
+
+    .team-role {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--red);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .lead-card .team-role { color: var(--yellow); }
+
+    .team-bio {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .support-card .team-photo-placeholder {
+      width: 72px;
+      height: 72px;
+      font-size: 1.4rem;
+    }
+
+    .support-card h3 { font-size: 0.875rem; }
+
+    @media (max-width: 900px) {
+      .support-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .leads-grid { grid-template-columns: 1fr; max-width: 320px; }
+      .support-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo-box">🎤</div>
+      <span class="nav-name">Ignite the Mic</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="performers.html">Performers</a></li>
+      <li><a href="team.html" class="active">Our Team</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="donate.html" class="nav-donate-btn">Donate ♥</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="page-hero">
+      <div class="section-label" style="color:var(--yellow)">The People Behind It</div>
+      <h1>Our Team</h1>
+      <p>Meet the students making Ignite the Mic a reality. Hover over a card to learn more.</p>
+    </div>
+
+    <div class="section">
+
+      <!-- LEADS -->
+      <div class="team-section-label" style="color:var(--yellow)">Leadership</div>
+      <div class="leads-grid">
+        <div class="team-card lead-card">
+          <div class="team-photo-placeholder">👤</div>
+          <h3>Mahima Menon</h3>
+          <p class="team-role">Founder</p>
+          <p class="team-bio">Bio coming soon.</p>
+          <div class="team-hover-overlay">
+            <h3>Mahima Menon</h3>
+            <div class="role">Founder</div>
+            <p>Bio coming soon.</p>
+          </div>
+        </div>
+        <div class="team-card lead-card">
+          <div class="team-photo-placeholder">👤</div>
+          <h3>Dhruv Koikara</h3>
+          <p class="team-role">Web Development Lead</p>
+          <p class="team-bio">Hi, I'm Dhruv. I joined this initiative to help those battling cancer and to use my skills for a cause larger than myself.</p>
+          <div class="team-hover-overlay">
+            <h3>Dhruv Koikara</h3>
+            <div class="role">Web Development Lead</div>
+            <p>Hi, I'm Dhruv. I joined this initiative to help those battling cancer and to use my skills for a cause larger than myself.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUPPORTING -->
+      <div class="team-section-label" style="color:var(--blue)">Supporting Team</div>
+      <div class="support-grid">
+        <div class="team-card support-card">
+          <div class="team-photo-placeholder">👤</div>
+          <h3>Name</h3>
+          <p class="team-role">Role / Title</p>
+          <div class="team-hover-overlay">
+            <h3>Name</h3>
+            <div class="role">Role / Title</div>
+            <p>Bio coming soon.</p>
+          </div>
+        </div>
+        <div class="team-card support-card">
+          <div class="team-photo-placeholder">👤</div>
+          <h3>Name</h3>
+          <p class="team-role">Role / Title</p>
+          <div class="team-hover-overlay">
+            <h3>Name</h3>
+            <div class="role">Role / Title</div>
+            <p>Bio coming soon.</p>
+          </div>
+        </div>
+        <div class="team-card support-card">
+          <div class="team-photo-placeholder">👤</div>
+          <h3>Name</h3>
+          <p class="team-role">Role / Title</p>
+          <div class="team-hover-overlay">
+            <h3>Name</h3>
+            <div class="role">Role / Title</div>
+            <p>Bio coming soon.</p>
+          </div>
+        </div>
+        <div class="team-card support-card">
+          <div class="team-photo-placeholder">👤</div>
+          <h3>Name</h3>
+          <p class="team-role">Role / Title</p>
+          <div class="team-hover-overlay">
+            <h3>Name</h3>
+            <div class="role">Role / Title</div>
+            <p>Bio coming soon.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Ignite the Mic. In partnership with St. Jude Children's Research Hospital. All rights reserved.</p>
+  </footer>
+</body>
+</html>

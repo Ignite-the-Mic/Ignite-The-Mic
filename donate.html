@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate — Ignite the Mic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .donate-wrap { max-width: 800px; margin: 0 auto; }
+
+    /* Progress */
+    .progress-block {
+      background: var(--dark3);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .progress-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.6rem;
+    }
+
+    .raised-amt {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: #fff;
+    }
+
+    .goal-amt {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .progress-track {
+      height: 10px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 0.6rem;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--red), var(--orange), var(--yellow));
+      border-radius: 999px;
+      width: 0%;
+      transition: width 1.5s ease;
+    }
+
+    .progress-sub {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* Tiers */
+    .tier-heading {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 1.25rem;
+      font-weight: 600;
+    }
+
+    .donate-tiers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .tier-card {
+      background: var(--dark3);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .tier-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    }
+
+    .tier-card:nth-child(1) { border-top: 3px solid var(--orange); }
+    .tier-card:nth-child(1):hover { border-color: var(--orange); }
+
+    .tier-card:nth-child(2) { border-top: 3px solid var(--red); }
+    .tier-card:nth-child(2):hover { border-color: var(--red); }
+
+    .tier-card:nth-child(3) { border-top: 3px solid var(--yellow); }
+    .tier-card:nth-child(3):hover { border-color: var(--yellow); }
+
+    .tier-img {
+      width: 72px;
+      height: 72px;
+      border-radius: 10px;
+      margin: 0 auto 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+    }
+
+    .tier-card:nth-child(1) .tier-img { background: rgba(224,123,63,0.12); }
+    .tier-card:nth-child(2) .tier-img { background: rgba(141,0,52,0.12); }
+    .tier-card:nth-child(3) .tier-img { background: rgba(247,196,64,0.12); }
+
+    .tier-amount {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 2rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .tier-card:nth-child(1) .tier-amount { color: var(--orange); }
+    .tier-card:nth-child(2) .tier-amount { color: var(--red); }
+    .tier-card:nth-child(3) .tier-amount { color: var(--yellow); }
+
+    .tier-desc {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .tier-card:nth-child(1) .btn { background: var(--orange); }
+    .tier-card:nth-child(1) .btn:hover { background: #c96a30; box-shadow: 0 0 20px rgba(224,123,63,0.4); }
+
+    .tier-card:nth-child(3) .btn { background: var(--yellow); color: #111; }
+    .tier-card:nth-child(3) .btn:hover { background: #d4a800; box-shadow: 0 0 20px rgba(247,196,64,0.4); }
+
+    /* Custom */
+    .custom-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 1.5rem;
+      background: var(--dark3);
+      border: 1px solid rgba(121,171,217,0.2);
+      border-radius: 10px;
+      margin-bottom: 3rem;
+    }
+
+    .custom-row span {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Impact stats */
+    .impact-strip {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 3rem;
+    }
+
+    .impact-strip h3 {
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .impact-card {
+      background: var(--dark3);
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .impact-num {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 1.8rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .impact-card:nth-child(1) .impact-num { color: var(--orange); }
+    .impact-card:nth-child(2) .impact-num { color: var(--blue); }
+    .impact-card:nth-child(3) .impact-num { color: var(--yellow); }
+
+    .impact-card p { font-size: 0.82rem; color: var(--text-muted); margin: 0; }
+
+    .every-dollar {
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fff;
+      margin-top: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .donate-tiers { grid-template-columns: 1fr; max-width: 340px; margin-left: auto; margin-right: auto; }
+      .impact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo-box">🎤</div>
+      <span class="nav-name">Ignite the Mic</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="performers.html">Performers</a></li>
+      <li><a href="team.html">Our Team</a></li>
+      <li><a href="donate.html" class="active">Donate</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="donate.html" class="nav-donate-btn">Donate ♥</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="page-hero">
+      <div class="section-label" style="color:var(--red)">Make a Difference</div>
+      <h1>Support the Cause</h1>
+      <p>Every dollar goes directly to families at St. Jude Children's Research Hospital.</p>
+    </div>
+
+    <div class="section">
+      <div class="donate-wrap">
+
+        <!-- PROGRESS -->
+        <div class="progress-block">
+          <div class="progress-top">
+            <span class="raised-amt" id="raised-label">$0 raised</span>
+            <span class="goal-amt">Goal: $25,000</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <div class="progress-sub">Help us reach our goal. Every contribution counts.</div>
+        </div>
+
+        <!-- TIERS -->
+        <div class="tier-heading">Choose your impact</div>
+        <div class="donate-tiers">
+          <div class="tier-card">
+            <div class="tier-img">👨‍👩‍👧</div>
+            <div class="tier-amount">$25</div>
+            <p class="tier-desc">Helps cover daily essentials for a family staying near the hospital during their child's treatment.</p>
+            <a href="https://www.stjude.org/donate" target="_blank" class="btn">Donate $25</a>
+          </div>
+          <div class="tier-card">
+            <div class="tier-img">🏥</div>
+            <div class="tier-amount">$50</div>
+            <p class="tier-desc">Contributes toward a week of medication costs for a child actively receiving life-saving treatment.</p>
+            <a href="https://www.stjude.org/donate" target="_blank" class="btn">Donate $50</a>
+          </div>
+          <div class="tier-card">
+            <div class="tier-img">❤️</div>
+            <div class="tier-amount">$100</div>
+            <p class="tier-desc">Helps fund a month of transportation for a family traveling to receive care they couldn't otherwise access.</p>
+            <a href="https://www.stjude.org/donate" target="_blank" class="btn">Donate $100</a>
+          </div>
+        </div>
+
+        <!-- CUSTOM -->
+        <div class="custom-row">
+          <span>💲 Or give any amount you choose</span>
+          <a href="https://www.stjude.org/donate" target="_blank" class="btn btn-outline">Custom Amount →</a>
+        </div>
+
+        <!-- IMPACT -->
+        <div class="impact-strip">
+          <h3>Why $25,000?</h3>
+          <div class="impact-grid">
+            <div class="impact-card">
+              <div class="impact-num">$700+</div>
+              <p>Monthly out-of-pocket costs for some families, even with insurance</p>
+            </div>
+            <div class="impact-card">
+              <div class="impact-num">0%</div>
+              <p>Families at St. Jude are never billed for treatment, travel, housing, or food</p>
+            </div>
+            <div class="impact-card">
+              <div class="impact-num">100%</div>
+              <p>Of every dollar raised through Ignite the Mic goes directly to the cause</p>
+            </div>
+          </div>
+          <p class="every-dollar">Every Donation Helps. ♥</p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Ignite the Mic. In partnership with St. Jude Children's Research Hospital. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const raisedAmount = 0;
+    const goal = 25000;
+    const pct = Math.min((raisedAmount / goal) * 100, 100);
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('progress-fill').style.width = pct + '%';
+        document.getElementById('raised-label').textContent = '$' + raisedAmount.toLocaleString() + ' raised';
+      }, 300);
+    });
+  </script>
+</body>
+</html>
