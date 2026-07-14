@@ -14,40 +14,55 @@
       align-items: start;
     }
 
-    .contact-reasons { display: flex; flex-direction: column; gap: 1.25rem; }
+    .contact-reasons { display: flex; flex-direction: column; gap: 1.5rem; }
 
-    .contact-reason {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-    }
+    .contact-reason { display: flex; gap: 1rem; align-items: flex-start; }
 
     .reason-icon {
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-
-    .contact-reason:nth-child(1) .reason-icon { background: rgba(141,0,52,0.15); }
-    .contact-reason:nth-child(2) .reason-icon { background: rgba(224,123,63,0.15); }
-    .contact-reason:nth-child(3) .reason-icon { background: rgba(121,171,217,0.15); }
-    .contact-reason:nth-child(4) .reason-icon { background: rgba(247,196,64,0.15); }
-
-    .reason-text h3 {
-      font-size: 0.9rem;
-      color: #fff;
-      margin-bottom: 0.2rem;
+      font-size: 0.85rem;
       font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      flex-shrink: 0;
+      color: #fff;
     }
 
+    .contact-reason:nth-child(1) .reason-icon { background: rgba(141,0,52,0.4); }
+    .contact-reason:nth-child(2) .reason-icon { background: rgba(224,123,63,0.4); }
+    .contact-reason:nth-child(3) .reason-icon { background: rgba(121,171,217,0.4); }
+    .contact-reason:nth-child(4) .reason-icon { background: rgba(247,196,64,0.25); }
+
+    .reason-text h3 { font-size: 0.9rem; color: #fff; margin-bottom: 0.2rem; font-family: 'Poppins', sans-serif; }
     .reason-text p { font-size: 0.83rem; color: var(--text-muted); margin: 0; }
 
-    /* Form */
+    .quick-links { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .quick-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.9rem 1.1rem;
+      background: var(--dark3);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 0.875rem;
+      transition: border-color 0.2s, transform 0.2s;
+      text-decoration: none;
+    }
+
+    .quick-link:hover { border-color: var(--red); transform: translateX(3px); color: #fff; }
+
+    .quick-link-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; font-family: 'Poppins', sans-serif; font-weight: 600; margin-bottom: 0.15rem; }
+    .quick-link:nth-child(1) .quick-link-label { color: var(--orange); }
+    .quick-link:nth-child(2) .quick-link-label { color: var(--blue); }
+    .quick-link span { font-size: 0.85rem; color: var(--text-muted); }
+
     .contact-form-wrap {
       background: var(--dark3);
       border: 1px solid rgba(255,255,255,0.07);
@@ -55,13 +70,7 @@
       padding: 2.25rem;
     }
 
-    .form-title {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #fff;
-      margin-bottom: 1.5rem;
-    }
+    .form-title { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.1rem; color: #fff; margin-bottom: 1.5rem; }
 
     .contact-form { display: flex; flex-direction: column; gap: 1rem; }
 
@@ -85,20 +94,12 @@
 
     .contact-form input::placeholder,
     .contact-form textarea::placeholder { color: rgba(255,255,255,0.28); }
-
     .contact-form input:focus,
     .contact-form textarea:focus,
     .contact-form select:focus { border-color: var(--red); }
-
     .contact-form select option { background: var(--dark3); }
-
     .contact-form textarea { min-height: 140px; resize: vertical; }
-
-    .form-note {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 0.25rem;
-    }
+    .form-note { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem; }
 
     @media (max-width: 768px) {
       .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -109,16 +110,15 @@
 <body>
   <nav>
     <a href="index.html" class="nav-brand">
-      <div class="nav-logo-box">🎤</div>
+      <div class="nav-logo-box">Ignite</div>
       <span class="nav-name">Ignite the Mic</span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html">About</a></li>
-      <li><a href="performers.html">Performers</a></li>
       <li><a href="team.html">Our Team</a></li>
       <li><a href="donate.html">Donate</a></li>
       <li><a href="contact.html" class="active">Contact</a></li>
-      <li><a href="donate.html" class="nav-donate-btn">Donate ♥</a></li>
+      <li><a href="donate.html" class="nav-donate-btn">Donate</a></li>
     </ul>
   </nav>
 
@@ -126,45 +126,58 @@
     <div class="page-hero">
       <div class="section-label" style="color:var(--blue)">Get in Touch</div>
       <h1>Contact Us</h1>
-      <p>Questions, performance inquiries, sponsorships — we'd love to hear from you.</p>
+      <p>Questions, performance inquiries, sponsorships — we would love to hear from you.</p>
     </div>
 
     <div class="section">
       <div class="contact-layout">
 
-        <!-- LEFT: reasons -->
         <div class="contact-reasons">
           <div class="contact-reason">
-            <div class="reason-icon">❓</div>
+            <div class="reason-icon">?</div>
             <div class="reason-text">
               <h3>Event Questions</h3>
-              <p>Want to know more about the event, location, or how to attend? Ask away.</p>
+              <p>Want to know more about the event, location, or how to attend?</p>
             </div>
           </div>
           <div class="contact-reason">
-            <div class="reason-icon">🎤</div>
+            <div class="reason-icon">Mic</div>
             <div class="reason-text">
               <h3>Perform With Us</h3>
-              <p>Are you a local artist who wants to use your talent for a great cause? We'd love to hear from you.</p>
+              <p>Are you a local artist who wants to use your talent for a great cause? We would love to hear from you.</p>
             </div>
           </div>
           <div class="contact-reason">
-            <div class="reason-icon">🤝</div>
+            <div class="reason-icon">Spn</div>
             <div class="reason-text">
               <h3>Sponsorship</h3>
-              <p>Local businesses and organizations can help amplify our impact. Let's talk about how.</p>
+              <p>Local businesses and organizations can help amplify our impact.</p>
             </div>
           </div>
           <div class="contact-reason">
-            <div class="reason-icon">🙋</div>
+            <div class="reason-icon">Vol</div>
             <div class="reason-text">
               <h3>Volunteer</h3>
-              <p>Want to help on event day? We're always looking for enthusiastic volunteers.</p>
+              <p>Want to help on event day? We are always looking for enthusiastic volunteers.</p>
             </div>
+          </div>
+
+          <div class="quick-links">
+            <a href="mailto:ignitethemic25@gmail.com" class="quick-link">
+              <div>
+                <div class="quick-link-label">Email Us</div>
+                <span>ignitethemic25@gmail.com</span>
+              </div>
+            </a>
+            <a href="https://www.stjude.org/donate" target="_blank" class="quick-link">
+              <div>
+                <div class="quick-link-label">Fundraising Page</div>
+                <span>Donate directly on St. Jude's platform</span>
+              </div>
+            </a>
           </div>
         </div>
 
-        <!-- RIGHT: form -->
         <div class="contact-form-wrap">
           <div class="form-title">Send us a message</div>
           <form class="contact-form" onsubmit="handleSubmit(event)">
@@ -174,7 +187,7 @@
             </div>
             <input type="email" placeholder="Email Address" required />
             <select required>
-              <option value="" disabled selected>What's this about?</option>
+              <option value="" disabled selected>What is this about?</option>
               <option value="question">General Question</option>
               <option value="perform">I want to perform</option>
               <option value="sponsor">Sponsorship</option>
@@ -183,9 +196,9 @@
             </select>
             <textarea placeholder="Your message..."></textarea>
             <div>
-              <button type="submit" class="btn">Send Message →</button>
+              <button type="submit" class="btn">Send Message</button>
             </div>
-            <p class="form-note">We'll get back to you as soon as possible.</p>
+            <p class="form-note">We will get back to you as soon as possible.</p>
           </form>
         </div>
 
@@ -194,7 +207,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 Ignite the Mic. In partnership with St. Jude Children's Research Hospital. All rights reserved.</p>
+    <p>&copy; 2026 Ignite the Mic. All rights reserved.</p>
   </footer>
 
   <script>
