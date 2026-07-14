@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ignite the Mic — A St. Jude Fundraiser</title>
+  <title>Ignite the Mic — A Fundraiser for St. Jude</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="shared.css" />
   <style>
-    /* ── HERO ── */
     #hero {
       position: relative;
       min-height: 100vh;
@@ -104,14 +103,8 @@
       margin-bottom: 2rem;
     }
 
-    .hero-btns {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-    /* ── ABOUT ── */
     #about-wrap {
       background: var(--dark2);
       border-top: 1px solid rgba(255,255,255,0.05);
@@ -125,17 +118,9 @@
       align-items: start;
     }
 
-    .about-text p {
-      color: var(--text-muted);
-      margin-bottom: 1.1rem;
-      line-height: 1.85;
-    }
+    .about-text p { color: var(--text-muted); margin-bottom: 1.1rem; line-height: 1.85; }
 
-    .about-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
+    .about-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
     .about-card {
       background: var(--dark3);
@@ -150,8 +135,6 @@
     .about-card:nth-child(2) { border-top-color: var(--blue); }
     .about-card:nth-child(3) { border-top-color: var(--orange); }
     .about-card:nth-child(4) { border-top-color: var(--red); }
-
-    .about-card-icon { font-size: 1.4rem; margin-bottom: 0.5rem; }
 
     .about-card h3 {
       font-size: 0.72rem;
@@ -168,29 +151,20 @@
 
     .about-card p { font-size: 0.875rem; color: var(--text-muted); margin: 0; }
 
-    /* ── MISSION STRIP ── */
     .mission-strip {
       background: linear-gradient(135deg, var(--red) 0%, #5a0020 100%);
       padding: 60px 2rem;
       text-align: center;
     }
 
-    .mission-strip-inner {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .mission-strip .section-label { color: rgba(255,255,255,0.6); margin-bottom: 0.75rem; display: block; font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase; font-family: 'Poppins', sans-serif; font-weight: 600; }
+    .mission-strip-inner { max-width: 700px; margin: 0 auto; }
+    .mission-strip .label { color: rgba(255,255,255,0.6); margin-bottom: 0.75rem; display: block; font-size: 0.72rem; letter-spacing: 3px; text-transform: uppercase; font-family: 'Poppins', sans-serif; font-weight: 600; }
     .mission-strip h2 { color: #fff; font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 1rem; }
-    .mission-strip p { color: rgba(255,255,255,0.8); font-size: 1.05rem; line-height: 1.8; margin: 0; }
+    .mission-strip p { color: rgba(255,255,255,0.85); font-size: 1.05rem; line-height: 1.8; margin: 0; }
 
     @media (max-width: 768px) {
       .about-body { grid-template-columns: 1fr; }
       .about-cards { grid-template-columns: 1fr 1fr; }
-      .hero-soundwave span { display: none; }
-      .hero-soundwave span:nth-child(3),
-      .hero-soundwave span:nth-child(4),
-      .hero-soundwave span:nth-child(5) { display: inline-block; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -201,24 +175,22 @@
 <body>
   <nav>
     <a href="index.html" class="nav-brand">
-      <div class="nav-logo-box">🎤</div>
+      <div class="nav-logo-box">Ignite</div>
       <span class="nav-name">Ignite the Mic</span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html" class="active">About</a></li>
-      <li><a href="performers.html">Performers</a></li>
       <li><a href="team.html">Our Team</a></li>
       <li><a href="donate.html">Donate</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="donate.html" class="nav-donate-btn">Donate ♥</a></li>
+      <li><a href="donate.html" class="nav-donate-btn">Donate</a></li>
     </ul>
   </nav>
 
   <main>
-    <!-- HERO -->
     <section id="hero">
       <div class="hero-bg"></div>
-      <div class="hero-eyebrow">In Partnership with St. Jude Children's Hospital</div>
+      <div class="hero-eyebrow">A Community Fundraiser</div>
       <h1>Ignite the Mic</h1>
       <div class="hero-soundwave" aria-hidden="true">
         <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
@@ -227,62 +199,55 @@
       <div class="hero-goal">Goal: $25,000</div>
       <div class="hero-btns">
         <a href="donate.html" class="btn">Donate Now</a>
-        <a href="performers.html" class="btn btn-outline">See Performers</a>
+        <a href="contact.html" class="btn btn-outline">Get Involved</a>
       </div>
     </section>
 
-    <div class="ornament">♥</div>
+    <div class="ornament">—</div>
 
-    <!-- ABOUT -->
     <div id="about-wrap">
-      <div class="section">
+      <div class="section" id="about">
         <div class="section-label" style="color:var(--orange)">About the Event</div>
         <h2>More Than a Concert</h2>
         <div class="about-body">
           <div class="about-text">
-            <p>Ignite the Mic is a community-driven event that merges the arts and music with supporting cancer research. The event unites people, enabling them to support children and families going through incredibly hard times while battling cancer.</p>
-            <p>Through live performances, Ignite the Mic creates a deeply supportive atmosphere where entertainment serves purpose — reminding us that even small acts can make a big impact. Every dollar raised goes directly to helping children and families receive life-changing treatment at St. Jude Children's Research Hospital.</p>
-            <p>Ignite the Mic was founded to use the power of creativity, community, and compassion to make a meaningful difference. We chose to incorporate music and the arts because creative expression has a unique ability to bring people together, inspire empathy, and encourage action in a way that resonates deeply.</p>
-            <a href="team.html" class="btn btn-outline" style="margin-top:0.5rem">Meet Our Team →</a>
+            <p>Ignite the Mic is a community driven event which merges the arts and music with supporting cancer research. The event unites people together, enabling them to support children and families going through incredibly hard times while battling cancer.</p>
+            <p>Through live performances, Ignite the Mic creates an incredibly supporting atmosphere where entertainment supports purpose, reminding people that even the small things you do can make a big impact. Every dollar raised goes directly to helping children and families receive life changing treatment, working towards the goal of enabling families to focus on their child's recovery without worrying about the cost of lifesaving care.</p>
+            <a href="team.html" class="btn btn-outline" style="margin-top:0.5rem">Meet Our Team</a>
           </div>
           <div class="about-cards">
             <div class="about-card">
-              <div class="about-card-icon">📅</div>
-              <h3>Date & Time</h3>
+              <h3>Date &amp; Time</h3>
               <p>September 2026 — exact date TBD</p>
             </div>
             <div class="about-card">
-              <div class="about-card-icon">📍</div>
               <h3>Location</h3>
               <p>Liberty High School<br>16655 SE 136th St, Renton, WA</p>
             </div>
             <div class="about-card">
-              <div class="about-card-icon">🎯</div>
               <h3>Our Mission</h3>
-              <p>Help families afford life-saving treatment at St. Jude so they can focus on care, not cost.</p>
+              <p>Help families afford life-saving treatment so they can focus on care, not cost.</p>
             </div>
             <div class="about-card">
-              <div class="about-card-icon">💰</div>
               <h3>Fundraising Goal</h3>
-              <p>$25,000 — even with insurance, some patients spend over $700/month on treatment.</p>
+              <p>Our goal of $25,000 is meant to reach as many families as possible. Every contribution counts, no matter the size.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- MISSION STRIP -->
     <div class="mission-strip">
       <div class="mission-strip-inner">
-        <span class="section-label">Our Mission</span>
+        <span class="label">Our Mission</span>
         <h2>Why We Do This</h2>
-        <p>Our mission is to remind the community that even small acts of support can create a lasting impact — and that every performance, donation, and attendee helps bring hope to children and families who need it most.</p>
+        <p>Ignite the Mic was founded to use the power of creativity, community, and compassion to make a meaningful difference in the lives of children and families facing cancer. We chose to incorporate music, performance, and the arts because creative expression has a unique ability to bring people together, inspire empathy, and encourage action in a way that resonates deeply with others. Our mission is to remind the community that even small acts of support can create a lasting impact.</p>
       </div>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2026 Ignite the Mic. In partnership with St. Jude Children's Research Hospital. All rights reserved.</p>
+    <p>&copy; 2026 Ignite the Mic. All rights reserved.</p>
   </footer>
 </body>
 </html>
