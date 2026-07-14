@@ -26,17 +26,13 @@
       cursor: default;
     }
 
-    .team-card:hover {
-      border-color: rgba(141,0,52,0.4);
-      transform: translateY(-3px);
-    }
-
+    .team-card:hover { border-color: rgba(141,0,52,0.4); transform: translateY(-3px); }
     .team-card:hover .team-hover-overlay { opacity: 1; }
 
     .team-hover-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(141,0,52,0.92);
+      background: rgba(141,0,52,0.93);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -51,6 +47,16 @@
     .team-hover-overlay .role { color: rgba(255,255,255,0.7); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 0.75rem; font-family: 'Poppins', sans-serif; font-weight: 600; }
     .team-hover-overlay p { color: rgba(255,255,255,0.85); font-size: 0.82rem; line-height: 1.6; }
 
+    .team-photo {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 1rem;
+      border: 2px solid rgba(141,0,52,0.4);
+    }
+
     .team-photo-placeholder {
       width: 90px;
       height: 90px;
@@ -61,8 +67,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.8rem;
-      color: rgba(141,0,52,0.35);
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     .team-card h3 { font-size: 0.95rem; color: #fff; margin-bottom: 0.2rem; }
@@ -71,7 +79,6 @@
       font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      color: var(--red);
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
       margin-bottom: 0.6rem;
@@ -90,16 +97,15 @@
 <body>
   <nav>
     <a href="index.html" class="nav-brand">
-      <div class="nav-logo-box">🎤</div>
+      <div class="nav-logo-box">Ignite</div>
       <span class="nav-name">Ignite the Mic</span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html">About</a></li>
-      <li><a href="performers.html">Performers</a></li>
       <li><a href="team.html" class="active">Our Team</a></li>
       <li><a href="donate.html">Donate</a></li>
       <li><a href="contact.html">Contact</a></li>
-      <li><a href="donate.html" class="nav-donate-btn">Donate ♥</a></li>
+      <li><a href="donate.html" class="nav-donate-btn">Donate</a></li>
     </ul>
   </nav>
 
@@ -107,29 +113,27 @@
     <div class="page-hero">
       <div class="section-label" style="color:var(--yellow)">The People Behind It</div>
       <h1>Our Team</h1>
-      <p>Meet the team of students making Ignite the Mic a reality. Hover over a card to learn more.</p>
+      <p>Meet the students making Ignite the Mic a reality. Hover over a card to learn more.</p>
     </div>
 
     <div class="section">
       <div class="team-grid">
 
         <div class="team-card">
-          <div class="team-photo-placeholder">👤</div>
+          <img src="mahima.jpg" alt="Mahima Menon" class="team-photo" />
           <h3>Mahima Menon</h3>
           <p class="team-role">Founder</p>
-          <p class="team-bio">Bio coming soon.</p>
           <div class="team-hover-overlay">
             <h3>Mahima Menon</h3>
             <div class="role">Founder</div>
-            <p>Bio coming soon.</p>
+            <p></p>
           </div>
         </div>
 
         <div class="team-card">
-          <div class="team-photo-placeholder">👤</div>
+          <div class="team-photo-placeholder">Photo</div>
           <h3>Dhruv Koikara</h3>
           <p class="team-role">Web Development Lead</p>
-          <p class="team-bio">Hi, I'm Dhruv. I joined this initiative to help those battling cancer and to use my skills for a cause larger than myself.</p>
           <div class="team-hover-overlay">
             <h3>Dhruv Koikara</h3>
             <div class="role">Web Development Lead</div>
@@ -138,122 +142,112 @@
         </div>
 
         <div class="team-card">
-          <div class="team-photo-placeholder">👤</div>
+          <img src="alexis.jpg" alt="Alexis Matin" class="team-photo" />
           <h3>Alexis Matin</h3>
           <p class="team-role">Event Logistics Lead</p>
-          <p class="team-bio">Bio coming soon.</p>
           <div class="team-hover-overlay">
             <h3>Alexis Matin</h3>
             <div class="role">Event Logistics Lead</div>
-            <p>Bio coming soon.</p>
+            <p></p>
           </div>
         </div>
 
         <div class="team-card">
-          <div class="team-photo-placeholder">👤</div>
+          <img src="julianne.jpg" alt="Julianne Lo" class="team-photo" />
           <h3>Julianne Lo</h3>
           <p class="team-role">Performer Outreach Lead</p>
-          <p class="team-bio">Bio coming soon.</p>
           <div class="team-hover-overlay">
             <h3>Julianne Lo</h3>
             <div class="role">Performer Outreach Lead</div>
-            <p>Bio coming soon.</p>
+            <p></p>
           </div>
         </div>
 
         <div class="team-card">
-          <div class="team-photo-placeholder">👤</div>
+          <img src="ava.jpg" alt="Ava Sim" class="team-photo" />
           <h3>Ava Sim</h3>
           <p class="team-role">Social Media Lead</p>
-          <p class="team-bio">Bio coming soon.</p>
           <div class="team-hover-overlay">
             <h3>Ava Sim</h3>
             <div class="role">Social Media Lead</div>
-            <p>Bio coming soon.</p>
+            <p></p>
           </div>
         </div>
 
         <div class="team-card">
-          <div class="team-photo-placeholder">👤</div>
+          <img src="aditya.jpg" alt="Aditya Palyam" class="team-photo" />
           <h3>Aditya Palyam</h3>
           <p class="team-role">Supporting Team</p>
-          <p class="team-bio">Bio coming soon.</p>
           <div class="team-hover-overlay">
             <h3>Aditya Palyam</h3>
             <div class="role">Supporting Team</div>
-            <p>Bio coming soon.</p>
+            <p></p>
           </div>
         </div>
 
         <div class="team-card">
-          <div class="team-photo-placeholder">👤</div>
+          <img src="ananyaa.jpg" alt="Ananyaa Shah" class="team-photo" />
           <h3>Ananyaa Shah</h3>
           <p class="team-role">Supporting Team</p>
-          <p class="team-bio">Bio coming soon.</p>
           <div class="team-hover-overlay">
             <h3>Ananyaa Shah</h3>
             <div class="role">Supporting Team</div>
-            <p>Bio coming soon.</p>
+            <p></p>
           </div>
         </div>
 
         <div class="team-card">
-          <div class="team-photo-placeholder">👤</div>
+          <img src="anna.jpg" alt="Anna Pham" class="team-photo" />
           <h3>Anna Pham</h3>
           <p class="team-role">Supporting Team</p>
-          <p class="team-bio">Bio coming soon.</p>
           <div class="team-hover-overlay">
             <h3>Anna Pham</h3>
             <div class="role">Supporting Team</div>
-            <p>Bio coming soon.</p>
+            <p></p>
           </div>
         </div>
 
         <div class="team-card">
-          <div class="team-photo-placeholder">👤</div>
+          <div class="team-photo-placeholder">Photo</div>
           <h3>Brianna Tran</h3>
           <p class="team-role">Supporting Team</p>
-          <p class="team-bio">Bio coming soon.</p>
           <div class="team-hover-overlay">
             <h3>Brianna Tran</h3>
             <div class="role">Supporting Team</div>
-            <p>Bio coming soon.</p>
+            <p></p>
           </div>
         </div>
 
         <div class="team-card">
-          <div class="team-photo-placeholder">👤</div>
+          <div class="team-photo-placeholder">Photo</div>
           <h3>Dana Jumnoodoo</h3>
           <p class="team-role">Supporting Team</p>
-          <p class="team-bio">Bio coming soon.</p>
           <div class="team-hover-overlay">
             <h3>Dana Jumnoodoo</h3>
             <div class="role">Supporting Team</div>
-            <p>Bio coming soon.</p>
+            <p></p>
           </div>
         </div>
 
         <div class="team-card">
-          <div class="team-photo-placeholder">👤</div>
+          <img src="fiona.jpg" alt="Fiona Ton" class="team-photo" />
           <h3>Fiona Ton</h3>
           <p class="team-role">Supporting Team</p>
-          <p class="team-bio">Bio coming soon.</p>
           <div class="team-hover-overlay">
             <h3>Fiona Ton</h3>
             <div class="role">Supporting Team</div>
-            <p>Bio coming soon.</p>
+            <p></p>
           </div>
         </div>
 
         <div class="team-card">
-          <div class="team-photo-placeholder">👤</div>
+          <img src="peyton.jpg" alt="Peyton Davis" class="team-photo" />
           <h3>Peyton Davis</h3>
           <p class="team-role">Supporting Team</p>
-          <p class="team-bio">Bio coming soon.</p>
           <div class="team-hover-overlay">
             <h3>Peyton Davis</h3>
             <div class="role">Supporting Team</div>
-            <p>Bio coming soon.</p>
+            <p></p>
           </div>
         </div>
 
@@ -262,7 +256,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 Ignite the Mic. In partnership with St. Jude Children's Research Hospital. All rights reserved.</p>
+    <p>&copy; 2026 Ignite the Mic. All rights reserved.</p>
   </footer>
 </body>
 </html>
