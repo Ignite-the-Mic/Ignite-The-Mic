@@ -9,37 +9,23 @@
   <style>
     .donate-wrap { max-width: 800px; margin: 0 auto; }
 
-    /* Progress */
     .progress-block {
-      background: var(--dark3);
+      background: var(--white);
       border-radius: 12px;
       padding: 2rem;
       margin-bottom: 3rem;
-      border: 1px solid rgba(255,255,255,0.07);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
     }
 
-    .progress-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 0.6rem;
-    }
+    .progress-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.6rem; }
 
-    .raised-amt {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1.6rem;
-      color: #fff;
-    }
-
-    .goal-amt {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-    }
+    .raised-amt { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.6rem; color: var(--dark-text); }
+    .goal-amt { font-size: 0.875rem; color: var(--muted-text); }
 
     .progress-track {
       height: 10px;
-      background: rgba(255,255,255,0.08);
+      background: var(--grey);
       border-radius: 999px;
       overflow: hidden;
       margin-bottom: 0.6rem;
@@ -53,19 +39,9 @@
       transition: width 1.5s ease;
     }
 
-    .progress-sub {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
+    .progress-sub { font-size: 0.82rem; color: var(--muted-text); }
 
-    /* Tiers */
-    .tier-heading {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1rem;
-      color: #fff;
-      margin-bottom: 1.25rem;
-      font-weight: 600;
-    }
+    .tier-heading { font-family: 'Poppins', sans-serif; font-size: 1rem; color: var(--dark-text); margin-bottom: 1.25rem; font-weight: 600; }
 
     .donate-tiers {
       display: grid;
@@ -75,147 +51,81 @@
     }
 
     .tier-card {
-      background: var(--dark3);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: var(--white);
+      border: 1px solid var(--card-border);
       border-radius: 12px;
       padding: 1.75rem 1.25rem;
       text-align: center;
       display: flex;
       flex-direction: column;
-      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
-    .tier-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
-    }
-
+    .tier-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
     .tier-card:nth-child(1) { border-top: 3px solid var(--orange); }
-    .tier-card:nth-child(1):hover { border-color: var(--orange); }
-
     .tier-card:nth-child(2) { border-top: 3px solid var(--red); }
-    .tier-card:nth-child(2):hover { border-color: var(--red); }
-
     .tier-card:nth-child(3) { border-top: 3px solid var(--yellow); }
-    .tier-card:nth-child(3):hover { border-color: var(--yellow); }
 
     .tier-img {
-      width: 72px;
-      height: 72px;
-      border-radius: 10px;
+      width: 72px; height: 72px; border-radius: 10px;
       margin: 0 auto 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.2rem;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Poppins', sans-serif; font-size: 0.75rem; font-weight: 700; color: #fff;
     }
 
-    .tier-card:nth-child(1) .tier-img { background: rgba(224,123,63,0.12); }
-    .tier-card:nth-child(2) .tier-img { background: rgba(141,0,52,0.12); }
-    .tier-card:nth-child(3) .tier-img { background: rgba(247,196,64,0.12); }
+    .tier-card:nth-child(1) .tier-img { background: var(--orange); }
+    .tier-card:nth-child(2) .tier-img { background: var(--red); }
+    .tier-card:nth-child(3) .tier-img { background: #b8860b; }
 
-    .tier-amount {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 800;
-      font-size: 2rem;
-      color: #fff;
-      margin-bottom: 0.5rem;
-    }
-
+    .tier-amount { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 2rem; margin-bottom: 0.5rem; }
     .tier-card:nth-child(1) .tier-amount { color: var(--orange); }
     .tier-card:nth-child(2) .tier-amount { color: var(--red); }
-    .tier-card:nth-child(3) .tier-amount { color: var(--yellow); }
+    .tier-card:nth-child(3) .tier-amount { color: #b8860b; }
 
-    .tier-desc {
-      font-size: 0.83rem;
-      color: var(--text-muted);
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      flex: 1;
-    }
+    .tier-desc { font-size: 0.83rem; color: var(--muted-text); margin-bottom: 1.5rem; line-height: 1.6; flex: 1; }
 
-    .tier-card:nth-child(1) .btn { background: var(--orange); }
-    .tier-card:nth-child(1) .btn:hover { background: #c96a30; box-shadow: 0 0 20px rgba(224,123,63,0.4); }
+    .tier-card:nth-child(1) .btn { background: var(--orange); border-radius: 999px; }
+    .tier-card:nth-child(1) .btn:hover { background: #c96a30; }
+    .tier-card:nth-child(3) .btn { background: #b8860b; border-radius: 999px; color: #fff; }
+    .tier-card:nth-child(3) .btn:hover { background: #9a720a; }
 
-    .tier-card:nth-child(3) .btn { background: var(--yellow); color: #111; }
-    .tier-card:nth-child(3) .btn:hover { background: #d4a800; box-shadow: 0 0 20px rgba(247,196,64,0.4); }
-
-    /* Custom */
     .custom-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      padding: 1.5rem;
-      background: var(--dark3);
-      border: 1px solid rgba(121,171,217,0.2);
-      border-radius: 10px;
-      margin-bottom: 3rem;
+      display: flex; align-items: center; justify-content: center;
+      gap: 1rem; flex-wrap: wrap; padding: 1.5rem;
+      background: var(--white);
+      border: 1px solid var(--card-border);
+      border-radius: 10px; margin-bottom: 3rem;
     }
 
-    .custom-row span {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
+    .custom-row span { color: var(--muted-text); font-size: 0.9rem; }
 
-    /* Impact stats */
-    .impact-strip {
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding-top: 3rem;
-    }
+    .impact-strip { border-top: 1px solid var(--card-border); padding-top: 3rem; }
+    .impact-strip h3 { font-size: 1rem; color: var(--dark-text); margin-bottom: 1.5rem; font-family: 'Poppins', sans-serif; }
 
-    .impact-strip h3 {
-      font-size: 1rem;
-      color: #fff;
-      margin-bottom: 1.5rem;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .impact-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
+    .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 
     .impact-card {
-      background: var(--dark3);
-      border-radius: 10px;
-      padding: 1.25rem;
-      text-align: center;
-      border: 1px solid rgba(255,255,255,0.06);
+      background: var(--white);
+      border-radius: 10px; padding: 1.25rem; text-align: center;
+      border: 1px solid var(--card-border);
+      transition: transform 0.2s;
     }
 
-    .impact-num {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 800;
-      font-size: 1.8rem;
-      margin-bottom: 0.3rem;
-    }
+    .impact-card:hover { transform: translateY(-2px); }
 
+    .impact-num { font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 1.8rem; margin-bottom: 0.3rem; }
     .impact-card:nth-child(1) .impact-num { color: var(--orange); }
     .impact-card:nth-child(2) .impact-num { color: var(--blue); }
-    .impact-card:nth-child(3) .impact-num { color: var(--yellow); }
+    .impact-card:nth-child(3) .impact-num { color: var(--red); }
+    .impact-card p { font-size: 0.82rem; color: var(--muted-text); margin: 0; }
 
-    .impact-card p { font-size: 0.82rem; color: var(--text-muted); margin: 0; }
-
-    .every-dollar {
-      text-align: center;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #fff;
-      margin-top: 2.5rem;
-    }
+    .every-dollar { text-align: center; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--dark-text); margin-top: 2.5rem; }
 
     @media (max-width: 768px) {
       .donate-tiers { grid-template-columns: 1fr; max-width: 340px; margin-left: auto; margin-right: auto; }
       .impact-grid { grid-template-columns: 1fr; }
     }
-  </style>
+</style>
 </head>
 <body>
   <nav>
@@ -243,7 +153,7 @@
     <div class="section">
       <div class="donate-wrap">
 
-        <!-- PROGRESS -->
+        <!-- progress bar -->
         <div class="progress-block">
           <div class="progress-top">
             <span class="raised-amt" id="raised-label">$0 raised</span>
@@ -255,7 +165,7 @@
           <div class="progress-sub">Help us reach our goal. Every contribution counts.</div>
         </div>
 
-        <!-- TIERS -->
+        <!-- level to impact low to high -->
         <div class="tier-heading">Choose your impact</div>
         <div class="donate-tiers">
           <div class="tier-card">
@@ -278,13 +188,13 @@
           </div>
         </div>
 
-        <!-- CUSTOM -->
+        <!-- spezial -->
         <div class="custom-row">
           <span>$ Or give any amount you choose</span>
           <a href="https://www.stjude.org/donate" target="_blank" class="btn btn-outline">Custom Amount →</a>
         </div>
 
-        <!-- IMPACT -->
+        <!-- explain -->
         <div class="impact-strip">
           <h3>Why $25,000?</h3>
           <div class="impact-grid">
